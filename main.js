@@ -6,7 +6,7 @@ game(5);
 
 function random(input) {
 
-    // generates random number from 0 to input
+    // generates random integer from 0 to input
     return Math.floor(Math.random() * input);
 }
 
@@ -23,6 +23,7 @@ function playerPlay() {
 
 
 function decideWinner(computerSelection, playerSelection) {
+
 
     let didWin;
 
