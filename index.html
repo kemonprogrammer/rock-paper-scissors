@@ -10,11 +10,17 @@
 
 <body>
 
-    <button>Rock</button>
-    <button>Paper</button>
-    <button>Scissors</button>
+    <button class="rock">Rock</button>
+    <button class="paper">Paper</button>
+    <button class="scissors">Scissors</button>
 
     <script src="main.js"></script>
+    <script>
+        const buttons = Array.from(document.querySelectorAll("button"));
+        buttons.forEach(button => button.addEventListener("click", (e) => {
+            console.log(e.target.className);
+        }))
+    </script>
 </body>
 
 </html>
