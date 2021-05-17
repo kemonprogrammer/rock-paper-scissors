@@ -16,28 +16,16 @@
         <button class="scissors">Scissors</button>
     </div>
 
-    <div id="score">
-
-    </div>
+    
 
 
 
-    <script src="main.js"></script>
 
-    <script>
-        const buttons = Array.from(document.querySelectorAll("button"));
-        buttons.forEach(button => button.addEventListener("click", (e) => {
-            const selection = e.target.className;
-            playRound(computerPlay(),selection);
-        }));
 
-        const scoreboard = document.querySelector("#score");
 
-        const playerScore = document.createElement("p");
-        playerScore.textContent = "5";
-        
-        scoreboard.appendChild(playerScore);
-    </script>
+
 </body>
+
+<script src="main.js"></script>
 
 </html>

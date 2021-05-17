@@ -81,11 +81,6 @@ buttons.forEach(button => button.addEventListener("click", (e) => {
 
 
 
-// function play() {
-//     return playRound(computerPlay(), playerPlay());
-// }
-
-
 /**
  * function game(gamesCount = 1) {
 
