@@ -2,7 +2,6 @@
 let options = ["Rock", "Paper", "Scissors"];
 
 
-// game();
 
 
 function random(input) {
@@ -10,15 +9,9 @@ function random(input) {
     return Math.floor(Math.random() * input);
 }
 
-
 function computerPlay() {
     let option = random(3);
     return options[option];
-}
-
-
-function playerPlay() {
-    return prompt(`Choose "Rock", "Paper" or "Scissors"`);
 }
 
 
@@ -75,15 +68,22 @@ function playRound(computerSelection, playerSelection) {
         }
     }
 
-    console.log(output);
+    scoreboard.textContent = output;
     return didWin;
 } // end of playRound() 
 
 
+buttons.forEach(button => button.addEventListener("click", (e) => {
+    const selection = e.target.className;
+    playRound(computerPlay(), selection);
+}));
 
-function play() {
-    return playRound(computerPlay(), playerPlay());
-}
+
+
+
+// function play() {
+//     return playRound(computerPlay(), playerPlay());
+// }
 
 
 /**
@@ -109,7 +109,7 @@ function play() {
     else
         output = "tied";
 
-    output = `You ${output} the game with an end-score of 
+    output = `You ${output} the game with an end-score of
                     ${roundsWon}:${roundsLost}!`;
     console.log(output);
 } // end of game()
