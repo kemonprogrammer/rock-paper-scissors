@@ -4,8 +4,21 @@ let options = ["Rock", "Paper", "Scissors"];
 
 
 
+// Creating elements and adding them to DOM
+const buttons = Array.from(document.querySelectorAll("button"));
+const scoreboard = document.createElement("div");
+const score = document.createElement("p");
+const message = document.createElement("p");
+
+scoreboard.id = "scoreboard";
+
+scoreboard.appendChild(score);
+scoreboard.appendChild(message);
+document.body.appendChild(scoreboard);
+
+// Gamelogic
 function random(input) {
-    // generates random integer from 0 to input
+    // generates random integer in range of 0 < input
     return Math.floor(Math.random() * input);
 }
 
@@ -51,7 +64,7 @@ function playRound(computerSelection, playerSelection) {
 
     didWin = decideWinner(computerSelection, playerSelection);
 
-    if (didWin)
+    if (didWin) { 
         output = `You Win! ${playerSelection} beats ${computerSelection}`;
 
     if (didWin === false)
