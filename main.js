@@ -14,6 +14,8 @@ const score = document.createElement("p");
 const message = document.createElement("p");
 
 scoreboard.id = "scoreboard";
+score.textContent = "0:0"
+message.textContent = "Click the buttons to start the game"
 
 scoreboard.appendChild(score);
 scoreboard.appendChild(message);
