@@ -86,8 +86,8 @@ function play() {
 }
 
 
-
-function game(gamesCount = 1) {
+/**
+ * function game(gamesCount = 1) {
 
     let roundsWon = 0,
         roundsLost = 0,
@@ -113,3 +113,4 @@ function game(gamesCount = 1) {
                     ${roundsWon}:${roundsLost}!`;
     console.log(output);
 } // end of game()
+ */

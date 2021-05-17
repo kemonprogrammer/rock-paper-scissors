@@ -10,16 +10,26 @@
 
 <body>
 
-    <button class="rock">Rock</button>
-    <button class="paper">Paper</button>
-    <button class="scissors">Scissors</button>
+    <div id="buttons">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
+
+    <div id="score">
+
+    </div>
+
+
 
     <script src="main.js"></script>
+
     <script>
         const buttons = Array.from(document.querySelectorAll("button"));
         buttons.forEach(button => button.addEventListener("click", (e) => {
-            console.log(e.target.className);
-        }))
+            const selection = e.target.className;
+            playRound(computerPlay(),selection);
+        }));
     </script>
 </body>
 
