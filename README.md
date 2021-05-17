@@ -5,4 +5,4 @@ Rock, paper, scissors game in the javascript console
 - How to select a random item out of an array
 - How to pass returns values trough multiple functions
 - How to apply the rule "One function, One action"
-- That code formatting is hard
+- How to use the DOM to dynamically generate and update HTML with JS
