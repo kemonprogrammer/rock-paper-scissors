@@ -6,6 +6,7 @@ let computerScore = 0;
 let isPlaying = true;
 
 
+
 // Creating elements and adding them to DOM
 
 const buttons = Array.from(document.querySelectorAll("button"));
@@ -20,7 +21,6 @@ message.textContent = "Click the buttons to start the game"
 scoreboard.appendChild(score);
 scoreboard.appendChild(message);
 document.body.appendChild(scoreboard);
-
 
 
 
@@ -107,35 +107,3 @@ buttons.forEach(button => button.addEventListener("click", (e) => {
     const selection = e.target.className;
     if (isPlaying) playRound(computerPlay(), selection);
 }));
-
-
-
-
-/**
- * function game(gamesCount = 1) {
-
-    let roundsWon = 0,
-        roundsLost = 0,
-        output = "";
-
-    for (let i = 0; i < gamesCount; i++) {
-        let didWin = play();
-        if (didWin)
-            roundsWon++;
-        if (didWin === false)
-            roundsLost++;
-        // if didWin = undefined, noone scores
-    }
-
-    if (roundsWon > roundsLost)
-        output = "won"
-    else if (roundsWon < roundsLost)
-        output = "lost"
-    else
-        output = "tied";
-
-    output = `You ${output} the game with an end-score of
-                    ${roundsWon}:${roundsLost}!`;
-    console.log(output);
-} // end of game()
- */
