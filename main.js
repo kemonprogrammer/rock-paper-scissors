@@ -1,6 +1,8 @@
 
 let options = ["Rock", "Paper", "Scissors"];
 
+let playerScore = 0;
+let computerScore = 0;
 
 
 
@@ -58,7 +60,7 @@ function decideWinner(computerSelection, playerSelection) {
 
 function playRound(computerSelection, playerSelection) {
 
-    // Boolean didWin if player won / not / draw
+    // didWin = if player did win
     let didWin;
     let output = "";
 
@@ -66,22 +68,16 @@ function playRound(computerSelection, playerSelection) {
 
     if (didWin) { 
         output = `You Win! ${playerSelection} beats ${computerSelection}`;
-
-    if (didWin === false)
+        playerScore++;
+    } else if (didWin === false) {
         output = `You Lose! ${computerSelection} beats ${playerSelection}`;
-
-    // if didWin = undefined then it's a 
-    // draw or an invalid player-choice
-    if (didWin === undefined) {
-        if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
-            // if draw
-            output = "It's a draw! Nobody wins!";
-        } else {
-            output = "Invalid choice!";
-        }
+        computerScore++;
+    } else {
+        output = "It's a draw! Nobody wins!";
     }
 
-    scoreboard.textContent = output;
+    score.textContent = `${playerScore}:${computerScore}`;
+    message.textContent = output;
     return didWin;
 } // end of playRound() 
 
