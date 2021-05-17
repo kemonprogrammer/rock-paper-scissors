@@ -30,6 +30,13 @@
             const selection = e.target.className;
             playRound(computerPlay(),selection);
         }));
+
+        const scoreboard = document.querySelector("#score");
+
+        const playerScore = document.createElement("p");
+        playerScore.textContent = "5";
+        
+        scoreboard.appendChild(playerScore);
     </script>
 </body>
 
