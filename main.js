@@ -3,10 +3,11 @@ let options = ["Rock", "Paper", "Scissors"];
 
 let playerScore = 0;
 let computerScore = 0;
-
+let isPlaying = true;
 
 
 // Creating elements and adding them to DOM
+
 const buttons = Array.from(document.querySelectorAll("button"));
 const scoreboard = document.createElement("div");
 const score = document.createElement("p");
@@ -18,7 +19,11 @@ scoreboard.appendChild(score);
 scoreboard.appendChild(message);
 document.body.appendChild(scoreboard);
 
+
+
+
 // Gamelogic
+
 function random(input) {
     // generates random integer in range of 0 < input
     return Math.floor(Math.random() * input);
@@ -66,25 +71,39 @@ function playRound(computerSelection, playerSelection) {
 
     didWin = decideWinner(computerSelection, playerSelection);
 
-    if (didWin) { 
-        output = `You Win! ${playerSelection} beats ${computerSelection}`;
+    if (didWin) {
+        output = `You Win! ${playerSelection} beats ${computerSelection}.`;
         playerScore++;
     } else if (didWin === false) {
-        output = `You Lose! ${computerSelection} beats ${playerSelection}`;
+        output = `You Lose! ${computerSelection} beats ${playerSelection}.`;
         computerScore++;
     } else {
         output = "It's a draw! Nobody wins!";
     }
 
     score.textContent = `${playerScore}:${computerScore}`;
+
+
+    if (playerScore >= 5 || computerScore >= 5) {
+        isPlaying = false;
+
+        if (playerScore > computerScore) {
+            output = output + "\n" + "You win the game!";
+        } else {
+            output = output + "\n" + "You lost the game!";
+        }
+    }
+
+
     message.textContent = output;
+
     return didWin;
 } // end of playRound() 
 
 
 buttons.forEach(button => button.addEventListener("click", (e) => {
     const selection = e.target.className;
-    playRound(computerPlay(), selection);
+    if (isPlaying) playRound(computerPlay(), selection);
 }));
 
 
