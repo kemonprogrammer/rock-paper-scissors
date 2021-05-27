@@ -13,6 +13,7 @@ const buttons = Array.from(document.querySelectorAll("button"));
 const scoreboard = document.createElement("div");
 const score = document.createElement("p");
 const message = document.createElement("p");
+const winner = document.createElement("p");
 
 scoreboard.id = "scoreboard";
 score.textContent = "0:0"
@@ -20,6 +21,8 @@ message.textContent = "Click the buttons to start the game"
 
 scoreboard.appendChild(score);
 scoreboard.appendChild(message);
+scoreboard.appendChild(document.createElement("br"));
+scoreboard.appendChild(winner);
 document.body.appendChild(scoreboard);
 
 
@@ -90,9 +93,9 @@ function playRound(computerSelection, playerSelection) {
         isPlaying = false;
 
         if (playerScore > computerScore) {
-            output = output + "\n" + "You win the game!";
+            winner.textContent ="You win the game!";
         } else {
-            output = output + "\n" + "You lost the game!";
+            winner.textContent = "You lost the game!";
         }
     }
 
