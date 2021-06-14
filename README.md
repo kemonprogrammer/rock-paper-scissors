@@ -1,5 +1,9 @@
+# Live-Demo
+
+https://kemonprogrammer.github.io/rock-paper-scissors/
+
 # Rock Paper Scissors
-Rock, paper, scissors game in the javascript console
+Rock, paper, scissors game in the browser and in the javascript console
 
 ## What I learned
 - How to select a random item out of an array
